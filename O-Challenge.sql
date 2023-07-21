@@ -35,14 +35,14 @@ create or replace TABLE ANALYTICS.WAREHOUSE.TYPE_CONFIG ( --- tabla TYPE_CONFIG
 	TYPE_CONFIG VARIANT
 );
 
---1. Proyectos activos hay por producto
+--1. Proyectos activos por producto
 SELECT  product_id, COUNT(*)
 FROM FCT_TASKS
 WHERE date_closed is null
 GROUP BY product_id
 ;
 
---2. Proyectos activos hay por equipo
+--2. Proyectos activos por equipo
 SELECT  _EQUIPO_ID, COUNT(*)
 FROM FCT_TASKS
 WHERE date_closed is null
